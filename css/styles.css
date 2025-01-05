@@ -47,7 +47,7 @@
 }
 
 /* Base */
-* {
+*, *::after, *::before {
     box-sizing: border-box;
 }
 
@@ -63,6 +63,10 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
     margin-top: 0;
+}
+
+a {
+   display: inline-block; 
 }
 
 address {
@@ -186,7 +190,7 @@ ul {
 }
 
 .section-title {
-    font-size: 64px;
+    font-size: 63px;
     font-weight: 900;
     line-height: 1.3;
 }
@@ -247,12 +251,41 @@ ul {
     content: '';
 }
 
+.chefs-list {
+    display: flex;
+    gap: 40px 30px;
+    flex-wrap: wrap;
+}
+
+.chefs-item {
+    flex-basis: calc((100% - 30px) / 2);
+}
+
+.chef-card {
+    display: flex;
+    gap: 30px;
+}
+
 .chef-photo {
     border-radius: 4px 4px 4px 200px;
     box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-normal);
 }
 
+.chef-text p {
+    margin-bottom: 24px;
+}
+
+.chef-text p:last-child {
+    margin-bottom: 0;
+}
+
 /* Format section */
+.formats-container {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
 .format-card {
     height: 444px;
     border: 1px solid lightgrey; /* remove */
@@ -285,7 +318,42 @@ ul {
     font-weight: 300;
 }
 
+/* Carousel */
+.carousel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    fill: var(--color-primary-dark);
+    border: 1px solid var(--color-primary-dark);
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.carousel-button:hover {
+    background-color: var(--color-primary-dark);
+    fill: var(--color-primary-light);
+}
+
 /* Contacts section */
+.contacts-section {
+    padding-bottom: 96px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 32px;
+}
+
+.contact-map {
+    flex-shrink: 0;
+    border-radius: 16px;
+}
+
 .contacts-title {
     margin-bottom: 16px;
 }
@@ -303,7 +371,16 @@ ul {
 }
 
 .address-copyright {
+    color: var(--color-secondary-normal);
     font-size: 14px;
+}
+
+.address-icon {
+    fill: var(--color-primary-light);
+}
+
+.address-icon:hover {
+    fill: var(--color-brand-light);
 }
 
 /* Footer section */
@@ -313,4 +390,20 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 32px 0;
+}
+
+.footer-container {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav, .footer-address {
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+}
+
+.footer-logo, .footer-menu, .address-list, .address-info {
+    flex-grow: 1;
 }
